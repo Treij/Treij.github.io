@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/article.css">
+</head>
+<body class="dark">
+    <header>
+        <a href="index.html">
+            <p>
+                Soukup a Chlan projekty
+            </p>            
+        </a>
+    </header>
+    <main>
+        <section>
+            <h1>
+                Padesky
+            </h1>
+            <address>
+                <p>
+                    Autoři:
+                <p>
+                <ul>
+                    <li>HW: Tomáš Soukup</li>
+                    <li>SW: Matěj Chlan</li>
+                </ul>
+            </address>
+            <p>
+                PADESKY jsou revoluční herní konzole, na které si můžete zahrát stejnojmennou hru PADESKY. Tato konzole je poháněná Arduinem Nano a velkolepý herní zážitek se zobrazuje na zeleném monochromním LED display, s vysokým rozlišením 7x30 zobrazovacích bodů. Abyste si mohly tento herní skvost užít kdekoliv, tato herní konzole je vybavená 2000 mAh akumulátorem, který se dobíjí pomocí Micro USB.
+            </p>
+            <p>
+                Samozřejmě k PADESKÁM se dá připojit i velice ergonomický ovladač s intuitivně rozmístěnými ovládacími prvky pro jednoduché hraní. Ani kvalitní audio této konzoli nechybí, je totiž vybavená jedním výkonným bzučákem s regulací hlasitosti. Tělo této konzole, i ovladač je vyrobeno z kvalitního hliníkového plechu. Display je zakryt robusním plexisklem.
+            </p>
+
+            <figure>
+                <img src="./images/padesky/square-preview.webp" alt="Jak vypadají padesky">
+            </figure>
+            <h2>
+                Vývoj
+            </h2>
+            <h3>
+                Alfa & Beta
+            </h3>
+            <p>
+                Toto byl počátek vývoje. Vše začalo navrhnutím displaye. To jsme ještě nevěděli co bude zobrazovat. Měli jsme pouze plán, že na něm bude pouze text, který se bude scrollovat. Proto první prototyp byl jen display. Ještě neměl ochranné plexisklo, ani zadní kryt. Byla to právě tato chvíle, kdy jsme zjistili, že pokud svítí mnoho diod najednou, tak to není téměř poznat. Museli jsme tedy improvizovat a najít dobrý způsob, jak display využít. A zde se zrodily padesky.
+            </p>
+            <p>
+                Tato testovací verze byla celkem náročná. Display měl problém stát, protože stále neměl rám. Tomu nepomáhal ani fakt, že aby fungoval, tak musel být připojem USB kabelem k počítači. Tento kabel ho pouze svou vahou táhl k jedné straně a byl ho schopný shodit. Tudíž každý otřes stolu byl kritický. Ovladač se skládal z nepájivého pole a dvou tlačítek. Co se programu týče, byl složitě napsán pro tak jednoduchou funkci. Desky padaly všechny stejnou rychlostí a při chybě byl konec. Ne hry, ale programu. Takže se muselo celé Arduino restartovat.
+            </p>
+
+            <h3>
+                1.0
+            </h3>
+
+            <p>
+                Do verze 1.0 přibylo plno funkcí. Začněme ale hardwarem. Display byl obohacen o plexisklo z předu a o plechovou konstrukci ze zadu. Ze spoda je možnost naistalovat stojan. Také byl přidán akumulátor, který se od té doby ještě nevybil. Samozřejmostí je i vypínač. Byl také zkonstruován pořádný ovladač. Ten má stále 2 tlačítka, ale navíc ještě diodu indikující zapnutí/vypnutí konzole a také se dá vypojit.
+            </p>
+            <p>
+                Po zapnutí se nyní zobrazí čtvereček a konzole čeká na stisk obou tlačítek najednou. Tím se spouští hra. Do hry byla přidána pomyslná "křivka obtížnosti", tedy spíše přímka, kdy první desky padají pomalu ale společně s časem se zrychlují. Mezery jsou náhodně generované. Konzole počítá skóre, ale ještě ho nezobrazuje. Při chybě se na obrazovce jednoduše zobrazí křížek.
+            </p>
+            <div class="r16x9">
+                <iframe src="https://www.youtube.com/embed/5SinBva6YCQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>            
+            <h3>
+                1.1
+            </h3>
+
+            <p>
+                Z hardwarové části se přidal pouze bzučák. Fun fact: původně jsme bzučák připojili na pin, který slouží pouze ke čtení. Byl jako jediný volný. Že pin slouží pouze ke čtení je složité dohledat (pokud netušíte, že může takovo vlastnost mít) a pro nás to byl veliký problém.
+            </p>
+            <p>
+                V této verzi se především měnil program. Nejvíce jsem se zaměřil na "jarní úklid". Měnil jsem strukturu kódu tak, abych na ní mohl do budoucna lépe a rychleji stavět. Dalším bodem bylo zobrazování skóre. Kvůli limitacím displaye se může zobrazovat pouze jeden znak v jednu chvíli. I přes to je to velice funkční a jednoduchý koncept. Skóre je zobrazováno třemi znaky, tudíž v rozmezí 0 - 999. Nevím, co se stane při skóre 1000. Chce to někdo zjistit? Zbývaly už jen malé úpravy. Přidal jsem pravidla k náhodné generaci děr. Testerům dělalo veliký problém přejet z levé strany úplně do prava a naopak. To už se nyní nestane. Také nemohou být dvě díry na stejné pozici ihned za sebou. Také má nyní konzole jednoduchou animaci při spuštění.
+            </p>
+            <p>
+                Práce na padeskách stále probíhá. V plánu je přidat více her/aplikací. Díky omezeným možnostem displaye to bude zajímavá výzva.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>Matěj Chlan</p>
+        <p>2020</p>
+    </footer>
+</body>
+</html>
