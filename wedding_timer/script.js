@@ -21,7 +21,7 @@ function refreshTime() {
     // If the count down is finished, write some text
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("timer").innerHTML = "Gratulace novomaželům";
+        document.getElementById("timer").innerHTML = "Gratulace novomaželům <br> ♥♥♥";
     }
 
 }
